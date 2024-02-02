@@ -1,0 +1,97 @@
+why you need to learn hooks?????????
+when we need to change in UI we need hooks or special function.
+
+
+
+In React, hooks are functions that enable functional components to use state and other React features that were previously only available in class components. They were introduced in React 16.8 to provide a more consistent way to manage state and side effects in functional components.
+
+Here are some reasons why hooks are essential in React:
+
+State Management in Functional Components:
+
+Before hooks, functional components were stateless, and if you needed state in your component, you had to convert it to a class component. With hooks like useState, functional components can now manage local state without the need for a class.
+Code Reusability:
+
+Hooks allow you to reuse stateful logic across multiple components. This promotes code reusability and helps in maintaining a clean and modular codebase.
+Simplified Side Effects with useEffect:
+
+The useEffect hook replaces lifecycle methods (like componentDidMount, componentDidUpdate, and componentWillUnmount) in class components. It helps manage side effects, such as data fetching, subscriptions, or manually changing the DOM, in a declarative and organized way.
+Custom Hooks:
+
+Custom hooks allow you to extract and share stateful logic between components. This enables the creation of reusable, self-contained units of logic that can be shared across different parts of your application.
+No Need for Classes:
+
+Hooks provide an alternative to using classes for stateful logic. This makes it easier for developers to write and understand functional components, reducing the cognitive load associated with class components.
+Better Code Organization:
+
+Hooks encourage developers to organize their code based on logical concerns rather than lifecycle methods. This can lead to more readable and maintainable code.
+Improved Performance:
+
+React optimizes the rendering of components using hooks. For example, the useMemo and useCallback hooks can help optimize the performance of your components by memoizing values and functions.
+More Predictable Code:
+
+Hooks follow a more predictable and consistent pattern than class components. This makes it easier to understand the flow of data and side effects in your components.
+Overall, hooks provide a more modern and flexible way to work with state and side effects in React, making functional components a powerful alternative to class components.
+
+
+
+
+
+
+
+
+
+
+
+REACT FIBER:-
+React Fiber is an ongoing reimplementation of React's core algorithm. It is the culmination of over two years of research by the React team.
+
+The goal of React Fiber is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is incremental rendering: the ability to split rendering work into chunks and spread it out over multiple frames.
+
+Other key features include the ability to pause, abort, or reuse work as new updates come in; the ability to assign priority to different types of updates; and new concurrency primitives.
+
+
+
+
+
+
+
+
+
+
+The key points are:
+
+In a UI, it's not necessary for every update to be applied immediately; in fact, doing so can be wasteful, causing frames to drop and degrading the user experience.
+Different types of updates have different priorities — an animation update needs to complete more quickly than, say, an update from a data store.
+
+A push-based approach requires the app (you, the programmer) to decide how to schedule work. A pull-based approach allows the framework (React) to be smart and make those decisions for you.
+
+
+
+
+What is RECONCILLIATION?????
+The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+
+update
+A change in the data used to render a React app. Usually the result of `setState`. Eventually results in a re-render.
+
+
+
+Reconciliation is the algorithm behind what is popularly understood as the "virtual DOM." A high-level description goes something like this: when you render a React application, a tree of nodes that describes the app is generated and saved in memory. This tree is then flushed to the rendering environment — for example, in the case of a browser application, it's translated to a set of DOM operations. When the app is updated (usually via setState), a new tree is generated. The new tree is diffed with the previous tree to compute which operations are needed to update the rendered app.
+
+Although Fiber is a ground-up rewrite of the reconciler, the high-level algorithm described in the React docs will be largely the same. The key points are:
+
+Different component types are assumed to generate substantially different trees. React will not attempt to diff them, but rather replace the old tree completely.
+Diffing of lists is performed using keys. Keys should be "stable, predictable, and unique."
+
+
+
+
+
+
+DOM VS VIRTUAL DOM
+In dom, browser restructure everything that means reload the full web app or web page.
+
+But in VIRTUAL DOM , we can track everything means we can track every node and reloads the particular node.
+
+In virtual dom it compares or diff two trees and render those changes.
