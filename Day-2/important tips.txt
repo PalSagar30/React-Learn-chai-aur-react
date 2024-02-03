@@ -1,0 +1,5 @@
+React Fibre is algorithm to update the virtual dom.
+
+Virtual dom is a tree like dom but it only updates the particular node which is changed.
+
+New React fibre algorithm suggest to use key so that it will optimize your code.
